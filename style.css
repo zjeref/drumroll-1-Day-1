@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(5, 3, 19);
+  color: #f2f2f2;
+  height: 100vh;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-wrap: wrap;
+}
+
+.key {
+  padding: 1em 1.3em;
+  border: 2px solid white;
+  margin: 0.4em 1em;
+  cursor: pointer;
+  font-size: 800;
+  color: rgb(143, 21, 88);
+  transition: all 0.07s;
+}
+
+.key span {
+  font-weight: 900;
+}
+
+.playing {
+  border: 4px solid rgb(143, 21, 88);
+  box-shadow: 0px 0px 4px 4px gold;
+  transform: scale(1.1);
+}
