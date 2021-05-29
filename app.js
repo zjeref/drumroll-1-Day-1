@@ -1,6 +1,5 @@
 window.addEventListener('keydown', playsound)
 
-
 function playsound(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio) return;
@@ -17,8 +16,21 @@ function playsound(e) {
     })
 }
 
-// const Keys = document.querySelector()
-// window.addEventListener('click', clicksound)
-// function clicksound(e) {
-//     console.log(this)
-// }
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => {
+    key.addEventListener("click", () => {
+        keyCode = key.dataset.key
+        audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+        audio.currentTime = 0
+        audio.play()
+
+        const keyPressed = document.querySelector(`div[data-key="${keyCode}"]`);
+        keyPressed.classList.add('playing');
+
+        keyPressed.addEventListener("transitionend", function(e) {
+        keyPressed.classList.remove("playing");
+    })
+})
+});
+
+
